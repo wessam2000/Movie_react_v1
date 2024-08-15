@@ -1,38 +1,241 @@
-.App {
-  text-align: center;
-}
+/* styles.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* background-color: #121212; */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+nav {
+  background-color: #222;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+nav a {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  margin: 20px 0;
+}
+
+section h2 {
+  margin-left: 20px;
+}
+
+.movies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.movie-card {
+  width: 200px;
+  margin: 10px;
+  cursor: pointer;
+  text-align: center;
+}
+.movie-card-poster {
+   position: relative;
+   
+   height: '600px';
+   margin: 5px auto;
+  cursor: pointer;
+  text-align: center;
+}
+.movie-card-poster img {
+  width: 70%;
+  height: 600px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.movie-card-poster-info{
+position: absolute;
+bottom: 0px;
+  left: 228px;
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+  background-color: rgba(150, 141, 141, 0.545);
+  width: 70%;
+  height: 130px;
+  border-radius: 10px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.movie-card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.movie-card p {
+  color: gray;
+  font-size: 14px;
+}
+body.dark {
+  background-color: rgb(56, 56, 56);
+  color: white;
+}
+body.light {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+.light .movies-grid {
+  background-color: white;
+  color: black;
+}
+
+.dark .movies-grid{
+  background-color: #4444;
+  color: black;
+}
+/* ToggleButton.css */
+
+.toggle-button {
+  background-color: #2196f3; /* Blue background */
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.toggle-button:hover {
+  background-color: #1769aa; /* Darker blue on hover */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-text h1 {
+  color: white;
+  font-size: 48px;
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.see-all {
+  background-color: transparent;
+  color: rgb(154, 154, 154);
+  font-size: larger;
+  font-weight: bold;
+  border:none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.see-all:hover {
+  color: #fd450d;
+}
+
+.movies-list {
+  display: flex;
+  overflow-x: auto;
+}
+
+.movie-card {
+  min-width: 150px;
+  margin-right: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-info {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgba(150, 141, 141, 0.545);
+  width: 100%;
+  height: 70px;
+  border-radius: 10px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.movie-info h3 {
+  align-self: center;
+  font-size: 16px;
+  color: white;
+}
+
+.movie-info p {
+  margin: 0;
+  font-size: 14px;
+  color: white;
+}
+
+
+
+footer {
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+.movie-container {
+  margin-bottom: 20px; /* Adds spacing between movie entries */
+  display: flex;
+  align-items: flex-start;
+}
+
+.movies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adds space between movie cards */
 }
